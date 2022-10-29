@@ -37,8 +37,6 @@ describe('search and register films', () => {
 
     const films = await listFilmUseCase.execute();
 
-    console.log(films);
-
     expect(films.length === 2).toBeTruthy();
   });
 });
