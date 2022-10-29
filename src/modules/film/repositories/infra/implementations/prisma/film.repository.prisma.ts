@@ -17,4 +17,22 @@ export class FilmRepository implements IFilmRepository {
 
     return film;
   }
+
+  async filmByTitle(title: string): Promise<Film | undefined> {
+    const film = await prismaClient.film.findFirst({
+      where: {
+        title: {
+          equals: title,
+          mode: 'insensitive',
+        },
+      },
+    });
+
+    return film || undefined;
+  }
+
+  async list(): Promise<Film[]> {
+    const films = await prismaClient.film.findMany();
+    return films;
+  }
 }
