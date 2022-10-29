@@ -10,4 +10,14 @@ export class FilmRepositoryInMemory implements IFilmRepository {
     this.films.push(film);
     return film;
   }
+
+  async filmByTitle(title: string): Promise<Film | undefined> {
+    const film = this.films.find((film) => film.title === title);
+
+    return film || undefined;
+  }
+
+  async list(): Promise<Film[]> {
+    return this.films;
+  }
 }
