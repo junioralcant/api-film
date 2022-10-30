@@ -5,7 +5,7 @@ import { searchAndRegisterFilmController } from '../../../../modules/film/useCas
 
 const filmRouter = Router();
 
-filmRouter.get('/films', (req, res) => {
+filmRouter.get('/films/list', (req, res) => {
   listFilmController.handle(req, res);
 });
 
