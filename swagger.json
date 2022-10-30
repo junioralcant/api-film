@@ -56,6 +56,22 @@
         "/films/list": {
             "get": {
                 "description": "List all films",
+                "parameters": [  
+                    {  
+                       "name":"skip",
+                       "in":"query",
+                       "description":"Number of pages to start counting",
+                       "required": false,
+                       "type":"number"
+                    },
+                    {  
+                        "name":"take",
+                        "in":"query",
+                        "description":"Number of records returned",
+                        "required": false,
+                        "type":"number"
+                     }
+                ],
                 "responses": {
                     "200": {
                         "description": "List updated successfully",
