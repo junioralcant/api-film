@@ -38,7 +38,37 @@
                 "description": "Update list film",
                 "responses": {
                     "200": {
-                        "description": "List updated successfully"
+                        "description": "List updated successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/RequestFilm"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/films/list": {
+            "get": {
+                "description": "List all films",
+                "responses": {
+                    "200": {
+                        "description": "List updated successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/RequestFilm"
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -76,6 +106,41 @@
                     }
                 },
                 "required": ["title", "description","banner", "director","producer"]
+            },
+            "ResponseListFilm": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "description": "Title film",
+                        "example": "Tropa de Elite 2"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description film",
+                        "example": "Nascimento é afastado do Bope após uma operação que dá errado e vai para a Secretaria de Segurança Pública do Rio."
+                    },
+                    "banner": {
+                        "type": "string",
+                        "description": "Banner film",
+                        "example": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR58evDjPxwoszxQecrmPwFPjrjFN5b-al7nSYoT0kTnZBOEcEB"
+                    },
+                    "director": {
+                        "type": "string",
+                        "description": "Director film",
+                        "example": "José Padilha"
+                    },
+                    "producer": {
+                        "type": "string",
+                        "description": "Producer film",
+                        "example": "Leonardo Edde"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Id film",
+                        "format": "uuid"
+                    } 
+                }
             }
         }
     }
