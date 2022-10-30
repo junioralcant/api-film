@@ -1,4 +1,5 @@
 import { ICreateFilmDTO } from '../dtos/crete-film.dtos';
+import { IFilterListFilmDTO } from '../dtos/filter-list-film.dots';
 import { Film } from '../entity/film.entity';
 
 export interface IFilmRepository {
@@ -6,5 +7,5 @@ export interface IFilmRepository {
 
   filmByTitle(title: string): Promise<Film | undefined>;
 
-  list(): Promise<Film[]>;
+  list(date: IFilterListFilmDTO): Promise<Film[]>;
 }
