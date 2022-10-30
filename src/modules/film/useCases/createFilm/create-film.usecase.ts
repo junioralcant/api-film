@@ -1,5 +1,6 @@
 import { ICreateFilmDTO } from '../../dtos/crete-film.dtos';
 import { IFilmRepository } from '../../repositories/ifilm.repository';
+import { ParameterRequiredError } from '../../../../shared/infra/error/parameter-requered.error';
 
 export class CreateFilmUseCase {
   constructor(private filmRepository: IFilmRepository) {}
@@ -11,8 +12,9 @@ export class CreateFilmUseCase {
     producer,
   }: ICreateFilmDTO) {
     if (!title || !banner || !description || !director || !producer) {
-      throw new Error(
-        'Title/banner/description/director/producer is required.'
+      throw new ParameterRequiredError(
+        'Title/banner/description/director/producer is required.',
+        422
       );
     }
 
