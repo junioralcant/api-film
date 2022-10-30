@@ -10,7 +10,6 @@
         "version": "1.0.0"
     },
     "paths": {
-        "tags": ["Film"],
         "/films": {
             "post": {
                 "description": "Create new film",
@@ -30,6 +29,16 @@
                     },
                     "422": {
                         "description": "Title/banner/description/director/producer is required."
+                    }
+                }
+            }
+        },
+        "/films/update": {
+            "post": {
+                "description": "Update list film",
+                "responses": {
+                    "200": {
+                        "description": "List updated successfully"
                     }
                 }
             }
