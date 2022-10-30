@@ -20,6 +20,6 @@
 
 - [x] Should be able list all films
 
-  - [x] Should not be able to list with pagination 10 out of 10
+  - [x] Should be able to list with pagination 10 out of 10
 
 ---
