@@ -2,6 +2,7 @@ import { prismaClient } from '../../../../../../shared/infra/database/prisma.con
 import { ICreateFilmDTO } from '../../../../dtos/crete-film.dtos';
 import { Film } from '../../../../entity/film.entity';
 import { IFilmRepository } from '../../../ifilm.repository';
+import { IFilterListFilmDTO } from '../../../../dtos/filter-list-film.dots';
 
 export class FilmRepository implements IFilmRepository {
   async create({
@@ -31,8 +32,14 @@ export class FilmRepository implements IFilmRepository {
     return film || undefined;
   }
 
-  async list(): Promise<Film[]> {
-    const films = await prismaClient.film.findMany();
+  async list({ skip, take }: IFilterListFilmDTO): Promise<Film[]> {
+    const films = await prismaClient.film.findMany({
+      skip: skip,
+      take: take,
+      orderBy: {
+        title: 'asc',
+      },
+    });
     return films;
   }
 }
