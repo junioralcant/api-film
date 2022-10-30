@@ -7,11 +7,16 @@ export class ListFilmCrontroller {
 
   async handle(request: Request, response: Response) {
     try {
+      const { skip, take } = request.query;
+
       const filmListUseCase = new ListFilmUseCase(
         this.filmRepository
       );
 
-      const films = await filmListUseCase.execute();
+      const films = await filmListUseCase.execute({
+        skip: Number(skip),
+        take: Number(take),
+      });
 
       return response.json(films);
     } catch (error: any) {
