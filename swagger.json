@@ -24,7 +24,7 @@
                     }
                 },
                 "responses": {
-                    "201": {
+                    "200": {
                         "description": "Registration successful"
                     },
                     "422": {
