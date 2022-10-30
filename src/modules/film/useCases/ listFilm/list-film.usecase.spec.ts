@@ -35,7 +35,12 @@ describe('search and register films', () => {
 
     await filmRepositoryInMemory.create(film2);
 
-    const films = await listFilmUseCase.execute();
+    const filmPafinate = {
+      skip: 0,
+      take: 10,
+    };
+
+    const films = await listFilmUseCase.execute(filmPafinate);
 
     expect(films.length === 2).toBeTruthy();
   });
