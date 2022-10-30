@@ -25,7 +25,9 @@ export class CreateFilmController {
 
       return response.json(film);
     } catch (error: any) {
-      return response.json({ error: error.message });
+      return response
+        .status(error.statusCode)
+        .json({ error: error.message });
     }
   }
 }
