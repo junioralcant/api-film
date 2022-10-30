@@ -1,0 +1,73 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Film",
+        "description": "The film api is an api where the user can register new movies and list all castrated movies.",
+        "contact": {
+            "name": "Support",
+            "email": "junioralcant1111@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "tags": ["Film"],
+        "/films": {
+            "post": {
+                "description": "Create new film",
+                "requestBody": {
+                    "description": "Data to create a new film",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RequestFilm"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Registration successful"
+                    },
+                    "422": {
+                        "description": "Title/banner/description/director/producer is required."
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "RequestFilm": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "description": "Title film",
+                        "example": "Tropa de Elite 2"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description film",
+                        "example": "Nascimento é afastado do Bope após uma operação que dá errado e vai para a Secretaria de Segurança Pública do Rio."
+                    },
+                    "banner": {
+                        "type": "string",
+                        "description": "Banner film",
+                        "example": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR58evDjPxwoszxQecrmPwFPjrjFN5b-al7nSYoT0kTnZBOEcEB"
+                    },
+                    "director": {
+                        "type": "string",
+                        "description": "Director film",
+                        "example": "José Padilha"
+                    },
+                    "producer": {
+                        "type": "string",
+                        "description": "Producer film",
+                        "example": "Leonardo Edde"
+                    }
+                },
+                "required": ["title", "description","banner", "director","producer"]
+            }
+        }
+    }
+}
