@@ -28,5 +28,6 @@
 
 1. You must have node installed
 2. You must have docker installed
-3. use the `npm install` command to install the dependencies
-4. use the `docker-compose up` command to start docker containers
+3. Use the `npm install` command to install the dependencies
+4. Use the `docker-compose up` command to start docker containers
+5. Use the `npx prisma migrate dev` command to run migrations
