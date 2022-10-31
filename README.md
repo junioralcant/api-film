@@ -23,3 +23,10 @@
   - [x] Should be able to list with pagination 10 out of 10
 
 ---
+
+### **Run the application**
+
+1. You must have node installed
+2. You must have docker installed
+3. use the `npm install` command to install the dependencies
+4. use the use the `docker-compose up` command to start docker containers
