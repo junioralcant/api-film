@@ -1,5 +1,11 @@
 # Films API
 
+### Api documentation
+
+https://films.apitest.app/docs
+
+---
+
 ### **Film registration**
 
 - [x] Should be able to register a film
