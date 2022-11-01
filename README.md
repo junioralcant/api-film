@@ -35,5 +35,6 @@ https://films.apitest.app/docs
 1. You must have node installed
 2. You must have docker installed
 3. Use the `npm install` command to install the dependencies
-4. Use the `docker-compose up` command to start docker containers
-5. Use the `npx prisma migrate dev` command to run migrations
+4. Create the `.env` file and configure the environment variables that are in the `.env.example` file
+5. Use the `docker-compose up` command to start docker containers
+6. Use the `npx prisma migrate dev` command to run migrations
